@@ -1,7 +1,7 @@
-import {type IBubbleItemEventMap, type IBubbleItemInstance} from './interfaces/IBubbleItem';
-import {type BubbleLocationType} from './types/Location';
-import {buildEuclidean} from './lib/distance';
 import {EventEmitter} from 'events';
+import type {IBubbleItemEventMap, IBubbleItemInstance} from './interfaces/IBubbleItem';
+import {buildEuclidean} from './lib/distance';
+import type {BubbleLocationType} from './types/Location';
 
 export abstract class BubbleItem extends EventEmitter<IBubbleItemEventMap> implements IBubbleItemInstance {
 	private handleDistance: ((loc: BubbleLocationType) => number) | undefined;

@@ -1,5 +1,5 @@
 import {EventEmitter} from 'events';
-import {IBubbleItemInstance} from './interfaces/IBubbleItem';
+import type {IBubbleItemInstance} from './interfaces/IBubbleItem';
 
 interface IDoubleBubble<T extends IBubbleItemInstance = IBubbleItemInstance> {
 	__fast: Set<IDoubleBubble>;
@@ -17,7 +17,7 @@ function bubleNormalize(value: number): 'fast' | 'slow' | undefined {
 	return undefined;
 }
 
-export class BubbleEvent<T extends IBubbleItemInstance> {
+export class BubbleEvent<T extends IBubbleItemInstance> extends EventEmitter {
 	private items = new Map<string, IDoubleBubble<T>>();
 
 	public addItem(instance: T) {
