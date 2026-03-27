@@ -5,11 +5,11 @@
             "dom",
             "dom.iterable"
         ],
-        "module": "commonjs",
+        "module": "node20",
         "target": "es6",
         "rootDir": "./src",
         "outDir": "./dist",
-        "moduleResolution": "node",
+        "moduleResolution": "node16",
         "sourceRoot": "./src",
         "types": [
             "node",
